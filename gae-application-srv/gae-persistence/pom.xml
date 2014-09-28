@@ -25,7 +25,6 @@
 			<groupId>fr.gae</groupId>
 			<artifactId>gae-transverse</artifactId>
 		</dependency>
-
 		<!-- =========== -->
 		<!-- Tierce -->
 		<!-- =========== -->
@@ -33,43 +32,44 @@
 			<groupId>postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 		</dependency>
-<!--  		<dependency>
-			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc6</artifactId>
-		</dependency>
- -->		<!-- =========== -->
+
+		<!-- =========== -->
 		<!-- Externe -->
 		<!-- =========== -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
 		</dependency>
-
 		<!-- HIBERNATE DEPENDECIES -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 		</dependency>
-
 		<!-- HSQL -->
 		<dependency>
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
-<!-- 			<scope>test</scope> -->
-		</dependency>		
+			<!-- <scope>test</scope> -->
+		</dependency>
 		<!-- =========== -->
-		<!-- TEST        -->
+		<!-- TEST -->
 		<!-- =========== -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- Test unitaire -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
 
+		<!-- logback -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
+	</dependencies>
 </project>
