@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <!-- ============================= -->
+  <!-- Description de dl'artifact    -->
+  <!-- ============================= -->
+  <artifactId>gae-ear</artifactId>
+  <packaging>ear</packaging>
+  <name>GAE - SRV - Ear</name>
+  <description>Ear de l'application GAE</description>
+  <parent>
+  	<groupId>fr.gae</groupId>
+  	<artifactId>gae-application-srv</artifactId>
+  	<version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  <!-- ============================= -->
+  <!-- Dependances                   -->
+  <!-- ============================= -->
+  <dependencies>
+  	<dependency>
+  		<groupId>fr.gae</groupId>
+  		<artifactId>gae-webapp</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  		<type>war</type>
+  	</dependency>
+  </dependencies>
+  
+  <!-- ============================= -->
+  <!-- BUILD                         -->
+  <!-- ============================= -->
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-ear-plugin</artifactId>
+        <inherited>true</inherited>
+        <configuration>
+          <earSourceDirectory>EarContent</earSourceDirectory>
+          <version>6</version>
+          <defaultLibBundleDir>APP-INF/lib</defaultLibBundleDir>
+          <generateApplicationXml>true</generateApplicationXml>
+          <modules>
+            <webModule>
+              <groupId>${project.groupId}</groupId>
+              <artifactId>gae-webapp</artifactId>
+              <bundleFileName>gae-webapp.war</bundleFileName>
+              <contextRoot>gae</contextRoot>
+            </webModule>
+          </modules>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

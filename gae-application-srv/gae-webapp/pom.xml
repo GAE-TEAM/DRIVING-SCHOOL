@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>fr.gae</groupId>
+    <artifactId>gae-application-srv</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>gae-webapp</artifactId>
+  <packaging>war</packaging>
+  <name>gae-webapp Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>fr.gae</groupId>
+      <artifactId>gae-transverse</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>fr.gae</groupId>
+      <artifactId>gae-service</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>fr.gae</groupId>
+      <artifactId>gae-persistence</artifactId>
+    </dependency>
+        <!-- SERVLET DEPENDENCIES -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+    </dependency>
+    <dependency>
+  	  <groupId>javax</groupId>
+  	  <artifactId>javaee-api</artifactId>  
+  	 </dependency>
+     
+    <!-- SPRING DEPENDENCIES --> 
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+    </dependency>
+    
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <!-- ================================= -->
+  <!-- BUILD                             -->
+  <!-- ================================= -->
+  <build>
+    <finalName>gae-webapp</finalName>
+    
+    		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-eclipse-plugin</artifactId>
+					<inherited>true</inherited>
+					<configuration>
+						<additionalBuildcommands>
+							<buildcommand>org.eclipse.m2e.core.maven2Builder</buildcommand>
+							<buildcommand>org.eclipse.wst.common.project.facet.core.builder</buildcommand>
+							<buildcommand>org.eclipse.wst.validation.validationbuilder</buildcommand>
+							<buildcommand>org.eclipse.wst.jsdt.core.javascriptValidator</buildcommand>
+						</additionalBuildcommands>
+						<additionalProjectnatures>
+							<projectnature>org.eclipse.m2e.core.maven2Nature</projectnature>
+							<projectnature>org.eclipse.wst.common.project.facet.core.nature</projectnature>
+							<projectnature>org.eclipse.wst.common.modulecore.ModuleCoreNature</projectnature>
+							<projectnature>org.eclipse.jem.workbench.JavaEMFNature</projectnature>
+							<projectnature>org.eclipse.wst.jsdt.core.jsNature</projectnature>
+						</additionalProjectnatures>
+						<additionalConfig>
+							<file>
+								<name>.settings/.jsdtscope</name>
+								<content>
+									<![CDATA[
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="**/jquery*" kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.wst.jsdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path=""/>
+</classpath>
+									]]>
+								</content>
+							</file>
+						</additionalConfig>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>    
+  </build></project>

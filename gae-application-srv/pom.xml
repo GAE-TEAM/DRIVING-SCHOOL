@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <!-- ================================= -->
+  <!-- Description de l'artifact         -->
+  <!-- ================================= -->
+  <artifactId>gae-application-srv</artifactId>
+  <packaging>pom</packaging>
+  <name>GAE - SRV - Application</name>
+  <description>Application serveur GAE</description>
+  <parent>
+    <groupId>fr.gae</groupId>
+    <artifactId>gae</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  <!-- ================================= -->
+  <!-- Modules                           -->
+  <!-- ================================= -->
+  <modules>
+    <module>gae-transverse</module>
+    <module>gae-persistence</module>
+    <module>gae-service</module>
+    <module>gae-webapp</module>
+	<module>gae-ear</module>
+  </modules>
+  <!-- ================================= -->
+  <!-- Proprietes                        -->
+  <!-- ================================= -->
+  <properties>
+    <project.build.sourceEncoding>Cp1252</project.build.sourceEncoding>
+	<project.encoding>Cp1252</project.encoding>
+	<spring.version>4.0.6.RELEASE</spring.version>
+	<hibernate.version>4.2.13.Final</hibernate.version>
+	<logback.version>1.1.2</logback.version>
+	<slf4j.version>1.7.7</slf4j.version>
+	<junit.version>4.11</junit.version>
+	<jaxws.version>2.2.6-6</jaxws.version>
+	<jee.version>6.0</jee.version>
+	<servlet.version>3.0.1</servlet.version>
+	<jstl.version>1.2</jstl.version>
+	<hsqldb.version>2.3.2</hsqldb.version>
+	<postgres.version>9.1-901-1.jdbc4</postgres.version>
+  </properties>
+  
+  <!-- ================================= -->
+  <!-- Resolveur de dependances          -->
+  <!-- ================================= -->
+  <dependencyManagement>
+  	 <dependencies>
+  	 	<!-- =============== -->
+  	 	<!-- Module interne  -->
+  	 	<!-- =============== -->
+  	 	<dependency>
+  	 	  <groupId>fr.gae</groupId>
+  	 	  <artifactId>gae-transverse</artifactId>
+  	 	  <version>${project.version}</version>
+  	 	</dependency>
+  	 	<dependency>
+  	 	  <groupId>fr.gae</groupId>
+  	 	  <artifactId>gae-transverse</artifactId>
+  	 	  <type>test-jar</type>
+  	 	  <version>${project.version}</version>
+  	 	</dependency>
+  	 	<dependency>
+  	 	  <groupId>fr.gae</groupId>
+  	 	  <artifactId>gae-persistence</artifactId>
+  	 	  <version>${project.version}</version>
+  	 	</dependency>
+  	 	<dependency>
+  	 	  <groupId>fr.gae</groupId>
+  	 	  <artifactId>gae-persistence</artifactId>
+  	 	  <type>test-jar</type>
+  	 	  <version>${project.version}</version>
+  	 	</dependency>
+  	 	<dependency>
+  	 	  <groupId>fr.gae</groupId>
+  	 	  <artifactId>gae-service</artifactId>
+  	 	  <version>${project.version}</version>
+  	 	</dependency>
+  	 	<dependency>
+  	 	  <groupId>fr.gae</groupId>
+  	 	  <artifactId>gae-service</artifactId>
+  	 	  <type>test-jar</type>
+  	 	  <version>${project.version}</version>
+  	 	</dependency>  	 	
+  	 	<!-- ========= -->
+  	 	<!-- Tierce    -->
+  	 	<!-- ========= -->
+  		<dependency>
+      	  <groupId>postgresql</groupId>
+          <artifactId>postgresql</artifactId>    	
+          <version>${postgres.version}</version>
+   	    </dependency> 
+  	 	
+  	  	<!-- ========= -->
+  	 	<!-- Externe   -->
+  	 	<!-- ========= -->
+  	 	<dependency>
+  	 	  <groupId>javax</groupId>
+  	 	  <artifactId>javaee-api</artifactId>
+  	 	  <version>${jee.version}</version>
+  	 	</dependency>
+  	 	
+  	 	<!-- JAXWS -->
+  	 	<dependency>
+  	 	  <groupId>com.sun.xml.ws</groupId>
+  	 	  <artifactId>jaxws-tools</artifactId>
+  	 	  <version>${jaxws.version}</version>
+  	 	  <scope>test</scope>
+  	 	</dependency>
+  	 	
+  	 	<!-- JUNIT DEPENDENCY -->
+  	 	<dependency>
+  	 	  <groupId>junit</groupId>
+  	 	  <artifactId>junit</artifactId>
+  	 	  <version>${junit.version}</version>
+  	 	</dependency>
+  	 	
+  	 	<!-- SERVLET DEPENDENCIES -->
+  	 	<dependency>
+  	 	  <groupId>javax.servlet</groupId>
+  	 	  <artifactId>javax.servlet-api</artifactId>
+  	 	  <version>${servlet.version}</version>
+  	 	  <scope>provided</scope>
+  	 	</dependency>
+  	 	<dependency>
+  	 	  <groupId>javax.servlet</groupId>
+  	 	  <artifactId>jstl</artifactId>
+  	 	  <version>${jstl.version}</version>
+  	 	</dependency>
+  	 	
+  	 	<!-- SPRING FRAMEWORK -->
+  	 	<dependency>
+  	 	  <groupId>org.springframework</groupId>
+  	 	  <artifactId>spring-core</artifactId>
+  	 	  <version>${spring.version}</version>
+  	 	</dependency>
+  	  	<dependency>
+  	 	  <groupId>org.springframework</groupId>
+  	 	  <artifactId>spring-context</artifactId>
+  	 	  <version>${spring.version}</version>
+  	 	</dependency>
+  	  	<dependency>
+  	 	  <groupId>org.springframework</groupId>
+  	 	  <artifactId>spring-context-support</artifactId>
+  	 	  <version>${spring.version}</version>
+  	 	</dependency>  	 	
+  	 	<dependency>
+  	 	  <groupId>org.springframework</groupId>
+  	 	  <artifactId>spring-aop</artifactId>
+  	 	  <version>${spring.version}</version>
+  	 	</dependency>
+  	 	<dependency>
+  	 	  <groupId>org.springframework</groupId>
+  	 	  <artifactId>spring-jdbc</artifactId>
+  	 	  <version>${spring.version}</version>
+  	 	</dependency>
+  	 	<dependency>
+  	 	  <groupId>org.springframework</groupId>
+  	 	  <artifactId>spring-orm</artifactId>
+  	 	  <version>${spring.version}</version>
+  	 	</dependency>
+  	 	<dependency>
+  	 	  <groupId>org.springframework</groupId>
+  	 	  <artifactId>spring-tx</artifactId>
+  	 	  <version>${spring.version}</version>
+  	 	  <exclusions>
+  	 	    <exclusion>
+  	 	      <groupId>commons-logging</groupId>
+  	 	      <artifactId>commons-logging</artifactId>
+  	 	    </exclusion>
+  	 	  </exclusions>
+  	 	</dependency>
+  	 	<dependency>
+  	 	  <groupId>org.springframework</groupId>
+  	 	  <artifactId>spring-web</artifactId>
+  	 	  <version>${spring.version}</version>
+  	 	</dependency>
+  	 	<dependency>
+  	 	  <groupId>org.springframework</groupId>
+  	 	  <artifactId>spring-beans</artifactId>
+  	 	  <version>${spring.version}</version>
+  	 	</dependency>
+  	 	<dependency>
+  	 	  <groupId>org.springframework</groupId>
+  	 	  <artifactId>spring-webmvc</artifactId>
+  	 	  <version>${spring.version}</version>
+  	 	</dependency>
+  	 	<dependency>
+  	 	  <groupId>org.springframework</groupId>
+  	 	  <artifactId>spring-websocket</artifactId>
+  	 	  <version>${spring.version}</version>
+  	 	</dependency>
+  	 	<dependency>
+  	 	  <groupId>org.springframework</groupId>
+  	 	  <artifactId>spring-messaging</artifactId>
+  	 	  <version>${spring.version}</version>
+  	 	</dependency>
+  	 	<!-- HIBERNATE DEPENDENCIES -->
+  	 	<dependency>
+  	 	  <groupId>org.hibernate</groupId>
+  	 	  <artifactId>hibernate-core</artifactId>
+  	 	  <version>${hibernate.version}</version>
+  	 	  <exclusions>
+  	 	    <exclusion>
+  	 	      <groupId>cglig</groupId>
+  	 	      <artifactId>cglib</artifactId>
+  	 	    </exclusion>
+  	 	  </exclusions>
+  	 	</dependency> 
+   	 	<!-- LOGGER -->
+  	 	<dependency>
+  	 	  <groupId>ch.qos.logback</groupId>
+  	 	  <artifactId>logback-classic</artifactId>
+  	 	  <version>${logback.version}</version>
+  	 	</dependency>
+  	 	<dependency>
+  	 	  <groupId>org.slf4j</groupId>
+  	 	  <artifactId>slf4j-log4j12</artifactId>
+  	 	  <version>${slf4j.version}</version>
+  	 	</dependency>  	 	
+  	 	<!-- TEST DEPENDENCIES -->
+  	 	<dependency>
+  	 	  <groupId>org.springframework</groupId>
+  	 	  <artifactId>spring-test</artifactId>
+  	 	  <version>${spring.version}</version>
+  	 	  <scope>test</scope>
+  	 	</dependency>
+  	 	<dependency>
+  	 	  <groupId>org.hsqldb</groupId>
+  	 	  <artifactId>hsqldb</artifactId>
+  	 	  <version>${hsqldb.version}</version>
+<!--   	 	  <scope>test</scope> -->
+  	 	</dependency>  	 	
+  	 	<!-- String Utils -->
+	    <dependency>
+	      <groupId>org.apache.commons</groupId>
+	      <artifactId>commons-lang3</artifactId>
+	      <version>3.3.2</version>
+	     </dependency>
+	     <dependency>
+		  <groupId>org.apache.commons</groupId>
+		  <artifactId>commons-collections4</artifactId>
+		  <version>4.0</version>
+		 </dependency>  	 	
+  	 </dependencies>
+  </dependencyManagement>
+  
+  <!-- ================================= -->
+  <!-- Build                             -->
+  <!-- ================================= -->
+ <build>
+	<pluginManagement>
+		<plugins>
+			<plugin>
+<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
+				<artifactId>maven-compiler-plugin</artifactId>
+				<inherited>true</inherited>				
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.4</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>test-jar</goal>
+						</goals>
+<!-- 						<phase>test-compile</phase> -->
+					</execution>
+				</executions>
+				<configuration>
+					<outputDirectory>${basedir}\target</outputDirectory>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.4</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<!-- La balise est egalement utilisee lors la generation des fichiers facet pour eclipse -->
+					<version>6</version>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<projectNameTemplate>[artifactId]</projectNameTemplate>
+					<wtpmanifest>true</wtpmanifest>
+					<wtpapplicationxml>true</wtpapplicationxml>
+					<wtpversion>2.0</wtpversion>
+					<useProjectReferences>true</useProjectReferences>
+					<downloadSources>false</downloadSources>
+					<manifest>${basedir}/src/main/resources/META-INF/MANIFEST.MF</manifest>
+					<additionalBuildcommands>
+						<buildcommand>org.eclipse.m2e.core.maven2Builder</buildcommand>
+						<buildcommand>org.eclipse.wst.common.project.facet.core.builder</buildcommand>
+						<buildcommand>org.eclipse.wst.validation.validationbuilder</buildcommand>
+					</additionalBuildcommands>
+					<additionalProjectnatures>
+						<projectnature>org.eclipse.m2e.core.maven2Nature</projectnature>
+						<projectnature>org.eclipse.wst.common.project.facet.core.nature</projectnature>
+						<projectnature>org.eclipse.wst.common.modulecore.ModuleCoreNature</projectnature>
+						<projectnature>org.eclipse.jem.workbench.JavaEMFNature</projectnature>
+					</additionalProjectnatures>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>1.0</version>
+			</plugin>
+		</plugins>
+	</pluginManagement>
+  </build>
+</project>
