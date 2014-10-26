@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<title>Auto-ecole du chene</title>
+<link href="../../Content/css/style.css" rel='stylesheet' />
+<link href="../../Content/css/fullcalendar.css" rel='stylesheet' />
+<link href="../../Content/css/fullcalendar.print.css" rel='stylesheet'
+	media='print' />
+<link href="../../Content/css/jquery-ui.css" rel="stylesheet">
+<link href="../../Content/css/bootstrap.css" rel="stylesheet" />
+<link href="../../Content/css/jquery.datetimepicker.css" rel="stylesheet" />
+
+</head>
+<body>
+	<div class="container">
+		<!-- FullCalendar -->
+		<div>
+			<div id='calendar'></div>
+		</div>
+
+		<!-- ui-dialog -->
+		<div id="dialog-form" title="Reserver un créneau">
+			<form>
+				<fieldset>
+					<input type="text" name="name" id="name" required="required" placeholder="Nom"/> 
+					<input type="text" name="lastname"id="lastname" required="required" placeholder="Prénom"/> 
+					<input type="text" name="start" id="startdatepicker" required="required" placeholder="Début"/>
+					<input type="text" name="end" id="enddatepicker" required="required" placeholder="End">
+					<!-- Allow form submission with keyboard without duplicating the dialog button -->
+				</fieldset>
+			</form>
+		</div>
+		
+		<!-- ui-dialog delete -->
+		<div id="dialog-delete" title="Suppressioon de rendez-vous">
+		<fieldset>
+			<p> Voulez-vous supprimer ce créneau</p>
+		</fieldset>
+		</div>
+	</div>
+
+	<!-- Lib -->
+	<script src="../../scripts/jquery.js"></script>
+	<script src="../../scripts/moment.min.js"></script>
+	<script src="../../scripts/fullcalendar.min.js"></script>
+	<script src="../../scripts/fr-ca.js"></script>
+	<script src='../../scripts/jquery-ui.js'></script>
+	<script src='../../scripts/bootstrap.js'></script>
+	<script src="../../scripts/jquery.datetimepicker.js"></script>
+	
+	<!-- App -->
+	<script src='../js/booking.js'></script>
+	<script src="../js/dialogBox.js"></script>
+
+</body>
+</html>

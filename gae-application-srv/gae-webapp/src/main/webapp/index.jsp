@@ -1,3 +1,1 @@
-<html>
-	<body>Hello Mounir</body>
-</html>
+<h1>Hello world</h1>

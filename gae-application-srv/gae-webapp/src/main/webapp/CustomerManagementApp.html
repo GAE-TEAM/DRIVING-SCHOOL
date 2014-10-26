@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="fr" data-ng-app="customersApp">
+<head>
+	<meta charset="utf-8">
+    <title>Auto-ecole du chene</title>
+    <link href="Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="Content/css/customerManagementStyles.css" rel="stylesheet" />
+	<link href="Content/css/style.css" rel='stylesheet' />	
+	<link href="Content/css/fullcalendar.css" rel='stylesheet' />
+	<link href="Content/css/fullcalendar.print.css" rel='stylesheet' media='print' />
+	<link href="Content/css/jquery-ui.css" rel="stylesheet">
+</head>
+<body>
+
+   <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+               
+                <ul class="nav nav-pills" data-ng-controller="NavbarController">
+                    <li data-ng-class="{'active':getClass('/customers')}"><a href="#/customers">Eleves</a></li>
+                    <li data-ng-class="{'active':getClass('/orders')}"><a href="#/orders">Gestion des personnels</a></li>
+                    <li data-ng-class="{'active':getClass('/booking')}"><a href="#/booking">Reservation</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Note that AngularJS 1.2+ now has a built-in ng-animation direction. Left in animated-view to show a 
+         custom directive -->
+    <div animated-view></div>
+
+
+    <div id="footer">
+        <div class="navbar navbar-fixed-bottom">
+            <div class="navbar-inner">
+                <div class="container">
+                    <footer>
+                        <div class="row">
+                            <div class="span4">
+                                Auto école du chaine
+                            </div>
+                        </div>
+                   </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vendor Libs: jQuery only used for Bootstrap functionality -->
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-route.js"></script>
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/moment.min.js"></script>
+	<script src="scripts/jquery.min.js"></script>
+	<script src="scripts/fullcalendar.min.js"></script>	
+	<script src="scripts/fr-ca.js"></script>
+	<script src='scripts/jquery-ui.js'></script>
+	<script src='scripts/bootstrap.js'></script>
+
+
+
+
+    <!-- App libs -->
+    <script src="app/app.js"></script>
+    <script src="app/controllers/controllers.js"></script>
+     <script src="app/services/customersService.js"></script>
+      <script src="app/directives/animatedView.js"></script>
+</body>
+</html>
