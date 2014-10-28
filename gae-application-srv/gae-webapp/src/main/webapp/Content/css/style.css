@@ -40,6 +40,10 @@ div#users-contain table {
 	width: 100%;
 }
 
+ html, body {
+        background-color: #eee;
+      }
+
 div#users-contain table td,div#users-contain table th {
 	border: 1px solid #eee;
 	padding: .6em 10px;
@@ -53,4 +57,26 @@ div#users-contain table td,div#users-contain table th {
 .validateTips {
 	border: 1px solid transparent;
 	padding: 0.3em;
+}
+
+.login-form {
+	margin-left: 65px;
+}
+
+legend {
+	margin-right: -50px;
+	font-weight: bold;
+	color: #404040;
+}
+
+.container>.content {
+	background-color: #fff;
+	padding: 20px;
+	margin: 0 -20px;
+	border-radius: 10px 10px 10px 10px;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+}
+
+.container {
+	width: 300px;
 }

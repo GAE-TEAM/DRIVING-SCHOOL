@@ -80,10 +80,10 @@
 		</dependency>
 
 		<!-- Primefaces dependency -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
-		</dependency>
+		</dependency> -->
 
 		<!-- Export format excel -->
 		<dependency>
